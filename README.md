@@ -10,3 +10,4 @@ Descriptivo: Me ayuda a determinar ¿Qué paso? <br>
 Diagnostico: Me ayuda a determinar ¿Por qué paso? <br>
 Predictivo: Me ayuda a determinar ¿Qué es posible que pase en el futuro? <br>
 Prescriptivo: Me ayuda a determinar ¿Cuál es la mejor estrategia a seguir? <br>
+<h5>Ejemplo de la vida real: El caso de una muerte vista desde un forense o un escolta cuando su protegido sufre un ataque</h5>
