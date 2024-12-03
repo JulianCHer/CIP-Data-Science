@@ -18,6 +18,6 @@ Prescriptivo: Me ayuda a determinar ¿Cuál es la mejor estrategia a seguir? <br
 
 <b>Ejercicio2:</b><br>
 <img src="https://github.com/user-attachments/assets/1f19448f-fe64-4ddc-bf58-3456eedf8019" style="width:40%;"><br>
-<b>RTA://</b> 5, 23, 12, 57, 3 <br><br>
+<b>RTA://</b> 5, 23, 12, 57, 7 <br><br>
 
 
