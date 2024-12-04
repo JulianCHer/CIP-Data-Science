@@ -1,4 +1,4 @@
-//#Clasificar a una persona segun su edad y nombre en python
+#Clasificar a una persona segun su edad y nombre en python
 
 edad = int(input("Digita la edad: "))
 nombre = input("Digita su nombre: ")
