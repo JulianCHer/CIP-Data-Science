@@ -21,3 +21,5 @@ Prescriptivo: Me ayuda a determinar ¿Cuál es la mejor estrategia a seguir? <br
 <b>RTA://</b> 5, 23, 12, 57, 7 <br><br>
 
 
+<h1>Clase 3</h1>
+
