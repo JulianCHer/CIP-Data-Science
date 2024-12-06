@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuegos Artificiales</title>
+    <style>
+        /* Estilos generales */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #1c1c1c;  /* Fondo oscuro */
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contenedor para los fuegos artificiales -->
+<div id="particles-js"></div>
+
+<!-- Cargar la librería particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script>
+    // Inicializar la animación de los fuegos artificiales
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 100,  // Número de partículas
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ff6347"  // Color de las partículas (naranja)
+            },
+            "shape": {
+                "type": "circle",  // Forma de las partículas
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                }
+            },
+            "opacity": {
+                "value": 0.8,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,  // Tamaño base de las partículas
+                "random": true,  // Tamaños aleatorios
+                "anim": {
+                    "enable": true,
+                    "speed": 10,  // Velocidad de cambio de tamaño
+                    "size_min": 2,  // Tamaño mínimo
+                    "sync": false
+                }
+            },
+            "move": {
+                "enable": true,
+                "speed": 5,  // Velocidad de movimiento
+                "direction": "none",  // Movimiento aleatorio
+                "random": true,
+                "straight": false,
+                "out_mode": "out",  // Las partículas saldrán de la pantalla
+                "bounce": false,
+                "attract": {
+                    "enable": false
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": false
+                },
+                "onclick": {
+                    "enable": false
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+
+</body>
+</html>
