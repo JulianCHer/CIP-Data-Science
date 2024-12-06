@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Alerta! Hackeado</title>
+    <style>
+        /* Estilo general de la página */
+        body {
+            background-color: #000; /* Fondo oscuro */
+            color: #0f0; /* Texto verde tipo consola */
+            font-family: "Courier New", monospace; /* Tipo de letra de consola */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Efecto de parpadeo en el texto */
+        .blinking {
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                visibility: hidden;
+            }
+        }
+
+        /* Estilo del mensaje principal */
+        .alert-message {
+            font-size: 2.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Estilo del contador */
+        .countdown {
+            font-size: 3rem;
+            margin-top: 20px;
+            letter-spacing: 0.2em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <p class="alert-message blinking">¡Tu computadora ha sido hackeada!</p>
+        <p class="alert-message">¡Debes destruirla antes de que sea demasiado tarde!</p>
+        <p class="countdown" id="countdown">5</p>
+    </div>
+
+    <script>
+        let countdownElement = document.getElementById("countdown");
+        let countdown = 5;
+
+        function updateCountdown() {
+            if (countdown > 0) {
+                countdownElement.textContent = countdown;
+                countdown--;
+            } else {
+                // Aquí se puede simular un efecto de destrucción
+                document.body.innerHTML = "<h1 style='color:red;'>¡BOOM! La computadora ha sido destruida.</h1>";
+            }
+        }
+
+        // Inicia el contador
+        setInterval(updateCountdown, 1000);
+    </script>
+
+</body>
+</html>
