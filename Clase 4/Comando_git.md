@@ -11,3 +11,4 @@ Por consola de git ingresamos a una carpeta que hayamos creado<br>
 <b>"ls -a"</b> me lista todas los archivos de la rama activa<br>
 <b>"git remote add origin (ruta del repositorio de la nube)"</b> Me permite relacionar mi repositorio en linea con el local a nivel de archivos y ramas<br>
 <b>"git push origin (nombre de la rama local)"</b> me sube los cambios de mi local a la nube<br>
+<b>"git clone (ruta del repositorio)"</b> me baja un repositorio de manera local para trabajar<br>
