@@ -8,3 +8,4 @@ Por consola de git ingresamos a una carpeta que hayamos creado<br>
 <b>"git branch (nombre de la rama)"</b> este comando es para crear una rama con un nombre especifico<br>
 <b>"git branch -l"</b> me lista todas las ramas<br>
 <b>"git checkout (nombre de la rama)"</b> este comando es para moverme a la rama que nombre<br>
+<b>"ls -a"</b> me lista todas los archivos de la rama activa<br>
