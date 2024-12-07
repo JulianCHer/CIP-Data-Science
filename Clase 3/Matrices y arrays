@@ -1,0 +1,2 @@
+Creación de matrices en python:
+matriz = [ [1,2,3,4] , [5,6,7,8] ] ---> Esta sería una matriz de 2 columnas x 4 filas
