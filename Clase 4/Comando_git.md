@@ -12,3 +12,9 @@ Por consola de git ingresamos a una carpeta que hayamos creado<br>
 <b>"git remote add origin (ruta del repositorio de la nube)"</b> Me permite relacionar mi repositorio en linea con el local a nivel de archivos y ramas<br>
 <b>"git push origin (nombre de la rama local)"</b> me sube los cambios de mi local a la nube<br>
 <b>"git clone (ruta del repositorio)"</b> me baja un repositorio de manera local para trabajar<br>
+<b>"git fetch"</b> me actualiza los cambios a bajar a mi repositorio local<br>
+<b>"git pull"</b> me baja los cambios que se encontraron a mi local<br>
+<b>"git branch -vv"</b> me muestra todas las ramas disponibles en mi local<br>
+<b>"git branch -r"</b> Me muestra todas las ramas ocultas y no ocultas de mi repositorio<br>
+<b>"git branch -m origin/Clases-CIP---TEORIA-Y-PRACTICA Clases-CIP---TEORIA-Y-PRACTICA"</b> me modifica la rama local al nombre igual al del repositorio en linea para poder subir cambios<br>
+<b>"git checkout -b origin/Clases-CIP---TEORIA-Y-PRACTICA"</b> Me cambio a la rama local oculta creando una temporal<br>
