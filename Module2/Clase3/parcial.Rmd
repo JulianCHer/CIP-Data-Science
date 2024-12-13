@@ -1,0 +1,341 @@
+---
+title: "Parcial"
+author: "Julian Hernandez"
+date: "2024-12-11"
+output: html_document
+---
+
+```{r}
+library(readr)
+df <- read_csv("C:/Users/Julian H/Desktop/student-mat.csv")
+
+library(ggplot2)
+
+#Punto 1:
+#1.	Un análisis descriptico de las principales variables cuantitativas - freetime, health, traveltime, studytime, age. (diagrama circular, histograma y análisis).
+T1=table(df$freetime)
+T1
+TP1=round(prop.table(T1),2)
+TDF1=data.frame(TP1)
+TDF1
+##Genero el diagrama, asignando a la función la variable de la columna en cuestión
+ggplot(TDF1,aes(x="", y=Freq, fill=Var1))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label=Freq),
+            position = position_stack(vjust=0.1))+
+  coord_polar(theta = "y")+
+  labs(title="Diagrama de circular de frecuencia relativa")
+```
+
+```{r}
+#Estipulo el supuesto numero maximos de valores de la columna en cuestión
+clases <- 5
+#Genero el diagrama con la asignación de variables para la función
+ggplot(df, aes(x=freetime))+
+  geom_bar(bins=clases,
+                 color="red",
+                 lwd=0.1,
+                 linetype=1, 
+                 position = "identity", 
+                 fill="blue")+
+  labs(title="Histograma de freetime", 
+       x="freetime",
+       y="Frecuencia Absoluta")
+```
+
+```{r}
+##ANALISIS
+##La muestra indica que la cantidad de estudiantes que tienen un indice de tiempo libre muy bajo es de 5%, indice bajo es de 16%, indice medio es 40%, indice alto es 29% y el indice muy alto es del 10%
+
+T2=table(df$health)
+T2
+TP2=round(prop.table(T2),2)
+TDF2=data.frame(TP2)
+TDF2
+##Genero el diagrama, asignando a la función la variable de la columna en cuestión
+ggplot(TDF2,aes(x="", y=Freq, fill=Var1))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label=Freq),
+            position = position_stack(vjust=0.1))+
+  coord_polar(theta = "y")+
+  labs(title="Diagrama de circular de frecuencia relativa")
+```
+
+```{r}
+clases <- 10
+#Genero el diagrama con la asignación de variables para la función
+ggplot(df, aes(x=health))+
+  geom_bar(bins=clases,
+                 color="red",
+                 lwd=0.1,
+                 linetype=1, 
+                 position = "identity", 
+                 fill="blue")+
+  labs(title="Histograma de health", 
+       x="health",
+       y="Frecuencia Absoluta")
+```
+
+```{r}
+##ANALISIS
+##La muestra indica que la cantidad de estudiantes que tienen un indice de salud muy bajo es de 12%, indice bajo es de 11%, indice medio es 23%, indice alto es 17% y el indice muy alto es del 37%
+```
+
+```{r}
+T3=table(df$traveltime)
+T3
+TP3=round(prop.table(T3),2)
+TDF3=data.frame(TP3)
+TDF3
+##Genero el diagrama, asignando a la función la variable de la columna en cuestión
+ggplot(TDF3,aes(x="", y=Freq, fill=Var1))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label=Freq),
+            position = position_stack(vjust=0.1))+
+  coord_polar(theta = "y")+
+  labs(title="Diagrama de circular de frecuencia relativa")
+```
+
+```{r}
+clases <- 4
+#Genero el diagrama asignando de variables para la función
+ggplot(df, aes(x=traveltime))+
+  geom_bar(bins=clases,
+                 color="red",
+                 lwd=0.1,
+                 linetype=1, 
+                 position = "identity", 
+                 fill="blue")+
+  labs(title="Histograma de traveltime", 
+       x="traveltime",
+       y="Frecuencia Absoluta")
+
+##ANALISIS
+##La muestra indica que la cantidad de estudiantes que tienen un indice de tiempo de viaje menor a 15min es de 65%, indice entre 15 a 30 min es de 27%, indice entre 30 min a 1 hora es 6%, indice mayor a 1 hora es 2%
+```
+
+```{r}
+T4=table(df$studytime)
+T4
+TP4=round(prop.table(T4),2)
+TDF4=data.frame(TP4)
+TDF4
+##Genero el diagrama, asignando a la función la variable de la columna en cuestión
+ggplot(TDF4,aes(x="", y=Freq, fill=Var1))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label=Freq),
+            position = position_stack(vjust=0.1))+
+  coord_polar(theta = "y")+
+  labs(title="Diagrama de circular de frecuencia relativa")
+```
+
+```{r}
+clases <- 4
+#Genero el diagrama asignando de variables para la función
+ggplot(df, aes(x=studytime))+
+  geom_bar(bins=clases,
+                 color="red",
+                 lwd=0.1,
+                 linetype=1, 
+                 position = "identity", 
+                 fill="blue")+
+  labs(title="Histograma de studytime", 
+       x="studytime",
+       y="Frecuencia Absoluta")
+
+##ANALISIS
+##La muestra indica que la cantidad de estudiantes que tienen un indice de tiempo de estudio menor a 2h es de 27%, indice entre 2 a 5 horas es de 50%, indice entre 5 a 10 horas es 16%, indice mayor a 10 horas es 7%
+```
+
+```{r}
+T5=table(df$age)
+T5
+TP5=round(prop.table(T5),2)
+TDF5=data.frame(TP5)
+TDF5
+##Genero el diagrama, asignando a la función la variable de la columna en cuestión
+ggplot(TDF5,aes(x="", y=Freq, fill=Var1))+
+  geom_bar(stat = "identity")+
+  geom_text(aes(label=Freq),
+            position = position_stack(vjust=0.1))+
+  coord_polar(theta = "y")+
+  labs(title="Diagrama de circular de frecuencia relativa")
+```
+```{r}
+clases <- 8
+#Genero el diagrama asignando de variables para la función
+ggplot(df, aes(x=age))+
+  geom_bar(bins=clases,
+                 color="red",
+                 lwd=0.1,
+                 linetype=1, 
+                 position = "identity", 
+                 fill="blue")+
+  labs(title="Histograma de age", 
+       x="age",
+       y="Frecuencia Absoluta")
+
+##ANALISIS
+##La muestra indica que la cantidad de estudiantes que tienen un indice de edad igual a 15 es de 21%, indice igual a 16 es de 26%, indice igual a 17 es 25%, indice igual a 18 es 21%, indice igual a 19 años es 6%, indice igual a 20 años es 1% y de los 21 a 22 años es de 0%
+```
+
+```{r}
+#Punto 2:
+# 2.	Un análisis descriptico de las principales variables cualitativas – school, sex, address, reason, guardian. (tabla y diagrama de barras)
+
+# -School
+#tabla:
+TC1=table(df$school)
+TC1
+
+#Diagrama de barras:
+tab.prob=prop.table(table(df$school))
+tab.prob
+barplot(tab.prob,
+        main="Diagrama de barras (school)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("red","purple"))
+
+```
+
+```{r}
+# -sex
+#tabla:
+TC2=table(df$sex)
+TC2
+
+#Diagrama de barras:
+tab.prob=prop.table(table(df$sex))
+tab.prob
+barplot(tab.prob,
+        main="Diagrama de barras (sex)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("blue","red"))
+```
+
+```{r}
+# -address
+#tabla:
+TC3=table(df$address)
+TC3
+
+#Diagrama de barras:
+tab.prob=prop.table(table(df$address))
+tab.prob
+barplot(tab.prob,
+        main="Diagrama de barras (address)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("green","purple"))
+```
+
+```{r}
+# -reason
+#tabla:
+TC4=table(df$reason)
+TC4
+
+#Diagrama de barras:
+tab.prob=prop.table(table(df$reason))
+tab.prob
+barplot(tab.prob,
+        main="Diagrama de barras (reason)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("blue","red","darkgreen","pink"))
+```
+
+```{r}
+#guardian
+#tabla:
+TC5=table(df$guardian)
+TC5
+
+
+
+#Diagrama de barras:
+tab.prob=prop.table(table(df$guardian))
+tab.prob
+barplot(tab.prob,
+        main="Diagrama de barras (guardian)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("blue","red","darkgreen","pink"))
+```
+
+```{r}
+# Punto 3:
+# 3.	A partir de la base anterior realice un análisis probabilístico que contenga:
+# a)	Realice una tabla de contingencia de probabilidad con las variables: sexo y dirección.
+# ¿Cuántas mujeres residen en la dirección R?
+# ¿Cuántas mujeres se encuentran en la base de estudio?
+# ¿Cuál es el numero de la población total en este segmento de estudio?
+
+addmargins(table(df$sex,df$address))
+
+# a) 
+# 1. La R cantidad de mujeres que tiene la tabla es 44
+# 2. En total se encuentran 208 mujeres en la base de estudio
+# 3. El total de población en este segmento de estudio es 395
+```
+
+```{r}
+# b)	Realice una tabla de contingencia de probabilidad con las variables: escuela y sexo. 
+# •	¿Cuántos hombres estudian en la escuela GP?
+# •	¿Cuántos alumnos estudian en la escuela MS? 
+# •	¿Cuántos alumnos estudian en la escuela GP? 
+
+addmargins(table(df$school,df$sex))
+
+# b) 
+# 1. Los hombres que estudian en GP es 166
+# 2. Los alumnos que estudian en MS es 46
+# 3. Los alumnos que estudian en GP es 349
+```
+
+```{r}
+# c)	Realice una gráfica de barra de las variables: razón y traveltime
+
+TC6 <- prop.table(table(df$reason, df$traveltime))
+TC6
+
+barplot(TC6,
+        main="Diagrama de barras (reason,traveltime)",
+        ylab="Probabilidad",
+        beside=TRUE,
+        col=c("red","blue","green","yellow"))
+```
+
+```{r}
+# d)	Realice un diagrama de bayes con las variables: sexo y dirección
+library(vtree)
+vtree(c(df$sex,df$address))
+```
+
+```{r}
+# e)	Realice un diagrama de bayes con las variables: Internet y tutor
+vtree(df,c("internet","guardian"))
+```
+
+```{r}
+
+# a)	Determine la probabilidad de seleccionar una Boy dado que tenga Wifi
+
+# Total personas con wifi = 287 + 223 = 510
+# Total niños con wifi = 287
+# Probabilidad = 287 / 510 = 0.56 = 56%
+
+#La probabilidad de que un Boy tenga wifi es del 56%
+
+# b)	Determine la probabilidad de seleccionar de seleccionar una Girl dado que tenga Mobile Data
+
+# Total personas con mobile data = 319 + 376 = 695
+# Total niñas con mobile data = 319
+# Probabilidad = 319 / 695 = 0.46 = 46%
+
+#La probabilidad de que un Boy tenga wifi es del 56%
+
+```
+
