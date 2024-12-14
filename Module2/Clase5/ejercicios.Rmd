@@ -1,0 +1,81 @@
+---
+title: "Ejercicios"
+author: "Julian Hernandez"
+date: "2024-12-14"
+output: html_document
+---
+
+```{r}
+#Ejercicio1
+library(readxl)
+tabla1 <- read_excel("C:/Repo github/CIP-Data-Science/Module2/Clase5/tabla1.xlsx")
+View(tabla1)
+summary(tabla1)
+tabla1
+attach(tabla1)
+names(tabla1)
+factor(Planta)
+library(rapportools)
+boxplot(Producción~Planta)
+```
+
+```{r}
+#El diagrama de bigotes muestra que las plantas izabal y quetzaltenango tienen medias
+#similares en comparación de chiquimula
+
+aov(Producción~Planta)
+planta1=aov(Producción~Planta)
+summary(planta1)
+TukeyHSD(planta1)
+
+#Se acepta la hipotesis nula porque en ninguno de sus grupos su medida es mayor a 0.05
+```
+
+```{r}
+#Ejercicio2
+library(readxl)
+tabla2 <- read_excel("C:/Repo github/CIP-Data-Science/Module2/Clase5/tabla2.xlsx")
+View(tabla2)
+summary(tabla2)
+tabla2
+attach(tabla2)
+names(tabla2)
+factor(clon)
+library(rapportools)
+boxplot(cantidad~clon)
+```
+
+```{r}
+#El diagrama de bigotes muestra que los clones tienen medias diferentes en todos sus grupos
+
+planta2=aov(cantidad~clon)
+summary(planta2)
+TukeyHSD(planta2)
+
+#Se acepta la hipotesis alternativa porque en al menos uno de sus grupos es mayor a 0.05
+```
+
+```{r}
+#Ejercicio3
+library(readxl)
+tabla3 <- read_excel("C:/Repo github/CIP-Data-Science/Module2/Clase5/tabla3.xlsx")
+View(tabla3)
+summary(tabla3)
+tabla3
+attach(tabla3)
+names(tabla3)
+factor(temperatura)
+library(rapportools)
+boxplot(valor~temperatura)
+```
+```{r}
+#El diagrama de bigotes muestra que las temperaturas 60°C y 70°C tienen medias iguales en 
+#comparación con la temperatura 50°C
+
+planta3=aov(valor~temperatura)
+summary(planta3)
+TukeyHSD(planta3)
+
+#Se acepta la hipotesis nula porque en todos sus grupos es mayor a 0.05
+```
+
